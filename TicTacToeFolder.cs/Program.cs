@@ -75,7 +75,7 @@ namespace TicTacToeWorkshop
         }
         private static bool isSpaceFree(char[] board, int input)
         {
-            return board [input] = ' ';
+            return board [input] == ' ';
         }
     }
 }
