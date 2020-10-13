@@ -58,7 +58,7 @@ namespace TicTacToeWorkshop
             Console.WriteLine("__________");
             Console.WriteLine("\n" + board[7] + " | " + board[8] + " | " + board[9]);
             Console.WriteLine("__________");
-       }
+        }
 	//UC4//
         public static int GetUserMove(char[] board)
         {
@@ -67,17 +67,21 @@ namespace TicTacToeWorkshop
             {
                 Console.WriteLine("Enter your next move between 1 to 9: ");
                 int input = Convert.ToInt32(Console.ReadLine());
-                if(Array.Find<int>(validCells, element => element == input) != 0 && isSpaceFree(board, input))
+                if((input>1 || input <9) && isSpaceFree(board, input))
                  {
-                         return input;
+                      return input;
                  }
+                else 
+                {
+                    Console.WriteLine("Invalid input");
+                }
             }
         }
         private static bool isSpaceFree(char[] board, int input)
         {
             return board [input] == ' ';
         }
-	//UC5//
+        //UC5//
         private static void MakeMove(char[] board, int input, char inputLetter)
         {
             bool spaceFree = isSpaceFree(board, input);
