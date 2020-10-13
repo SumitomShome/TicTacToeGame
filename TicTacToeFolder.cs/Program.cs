@@ -2,7 +2,13 @@ using System;
 namespace TicTacToeWorkshop
 {
     public class TicTacToeGame
-    {
+    {   public const int HEAD = 0;
+        public const int TAIL = 0;
+        public enum Player
+        {
+            USER,
+            COMPUTER
+        };
         static void Main(string[] args)
         {
             char[] board = CreateTheBoard();
@@ -10,6 +16,7 @@ namespace TicTacToeWorkshop
             ShowBoard(board);
             int userMove = GetUserMove(board);
 	    MakeMove(board, userMove, userLetter);
+	    Player player = GetWhoStartsFirst();
         }
         //UC1//
         public static char[] CreateTheBoard()
@@ -94,6 +101,17 @@ namespace TicTacToeWorkshop
             {
                 Console.WriteLine("The space is not free");
             }
+        }
+	 //UC6//
+        private static Player GetWhoStartsFirst()
+        {
+            int toss = GetRandomChoice(2);
+            return (toss == HEAD) ? Player.USER : Player.COMPUTER;
+        }
+        private static int GetRandomChoice(int choices)
+        {
+            Random random = new Random();
+            return (int)(random.Next()*10)% choices;
         }
     }
 }
