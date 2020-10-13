@@ -22,7 +22,11 @@ namespace TicTacToeWorkshop
         {
             Console.WriteLine("Choose between X and O to play the Tic Tac Toe Game");
             string userLetter = Console.ReadLine();
+<<<<<<< HEAD
             if (userLetter == "X")
+=======
+	    if (userLetter == "X")
+>>>>>>> UC2-ChooseLetter
             {
                 return char.ToUpper(userLetter[0]);
             }
@@ -44,6 +48,7 @@ namespace TicTacToeWorkshop
                 userLetter = Console.ReadLine();
                 return char.ToUpper(userLetter[0]);
             }
+<<<<<<< HEAD
         }
 	//UC3//
         public static void ShowBoard(char[] board)
@@ -54,6 +59,8 @@ namespace TicTacToeWorkshop
             Console.WriteLine("__________");
             Console.WriteLine("\n" + board[7] + " | " + board[8] + " | " + board[9]);
             Console.WriteLine("__________");
+=======
+>>>>>>> UC2-ChooseLetter
         }
     }
 }
