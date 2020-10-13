@@ -67,7 +67,7 @@ namespace TicTacToeWorkshop
             {
                 Console.WriteLine("Enter your next move between 1 to 9: ");
                 int input = Convert.ToInt32(Console.ReadLine());
-                if((input>1 || input <9) && isSpaceFree(board, input))
+                if((input>= 1 || input <= 9) && isSpaceFree(board, input))
                  {
                       return input;
                  }
