@@ -9,6 +9,7 @@ namespace TicTacToeWorkshop
 	    char userLetter = ChooseLetterFromUser();
             ShowBoard(board);
             int userMove = GetUserMove(board);
+	    MakeMove(board, userMove, userLetter);
         }
         //UC1//
         public static char[] CreateTheBoard()
@@ -70,12 +71,25 @@ namespace TicTacToeWorkshop
                  {
                          return input;
                  }
-                    
             }
         }
         private static bool isSpaceFree(char[] board, int input)
         {
             return board [input] == ' ';
+        }
+	//UC5//
+        private static void MakeMove(char[] board, int input, char inputLetter)
+        {
+            bool spaceFree = isSpaceFree(board, input);
+            if(spaceFree)
+            {
+                Console.WriteLine("The space is free");
+                board[input] = inputLetter;
+            }
+            else
+            {
+                Console.WriteLine("The space is not free");
+            }
         }
     }
 }
