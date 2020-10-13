@@ -17,5 +17,11 @@ namespace TicTacToeWorkshop
             }
             return board;
         }
+	private static char ChooseLetterFromUser()
+        {
+            Console.WriteLine("Choose between X and O to play the Tic Tac Toe Game");
+            string userLetter = Console.ReadLine();
+            return char.ToUpper(userLetter[0]);
+        }
     }
 }
