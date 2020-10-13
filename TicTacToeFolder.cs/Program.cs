@@ -21,12 +21,28 @@ namespace TicTacToeWorkshop
         {
             Console.WriteLine("Choose between X and O to play the Tic Tac Toe Game");
             string userLetter = Console.ReadLine();
-	    while(userLetter != "X" || userLetter!= "O" || userLetter != "x" || userLetter != "o")
+	    if (userLetter == "X")
+            {
+                return char.ToUpper(userLetter[0]);
+            }
+            else if (userLetter == "O")
+            {
+                return char.ToUpper(userLetter[0]);
+            }
+            else if (userLetter == "x")
+            {
+                return char.ToUpper(userLetter[0]);
+            }
+            else if (userLetter == "o")
+            {
+                return char.ToUpper(userLetter[0]);
+            }
+            else
             {
                 Console.WriteLine("Enter valid input");
                 userLetter = Console.ReadLine();
-             }
-            return char.ToUpper(userLetter[0]);
+                return char.ToUpper(userLetter[0]);
+            }
         }
     }
 }
