@@ -6,6 +6,7 @@ namespace TicTacToeWorkshop
         static void Main(string[] args)
         {
             char[] board = CreateTheBoard();
+	    char userLetter = ChooseLetterFromUser();
         }
         //UC1//
         public static char[] CreateTheBoard()
