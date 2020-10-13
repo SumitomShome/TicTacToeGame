@@ -6,6 +6,9 @@ namespace TicTacToeWorkshop
         static void Main(string[] args)
         {
             char[] board = CreateTheBoard();
+	    char userLetter = ChooseLetterFromUser();
+            ShowBoard(board);
+            int userMove = GetUserMove(board);
         }
         //UC1//
         public static char[] CreateTheBoard()
@@ -55,5 +58,24 @@ namespace TicTacToeWorkshop
             Console.WriteLine("\n" + board[7] + " | " + board[8] + " | " + board[9]);
             Console.WriteLine("__________");
        }
+	//UC4//
+        public static int GetUserMove(char[] board)
+        {
+            int[] validCells = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            while( true)
+            {
+                Console.WriteLine("Enter your next move between 1 to 9: ");
+                int input = Convert.ToInt32(Console.ReadLine());
+                if(Array.Find<int>(validCells, element => element == input) != 0 && isSpaceFree(board, input))
+                 {
+                         return input;
+                 }
+                    
+            }
+        }
+        private static bool isSpaceFree(char[] board, int input)
+        {
+            return board [input] = ' ';
+        }
     }
 }
