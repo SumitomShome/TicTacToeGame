@@ -17,16 +17,15 @@ namespace TicTacToeWorkshop
             }
             return board;
         }
-	private static char ChooseLetterFromUser()
+	//UC3//
+        public static void ShowBoard(char[] board)
         {
-            Console.WriteLine("Choose between X and O to play the Tic Tac Toe Game");
-            string userLetter = Console.ReadLine();
-	    while(userLetter != "X" || userLetter!= "O" || userLetter != "x" || userLetter != "o")
-            {
-                Console.WriteLine("Enter valid input");
-                userLetter = Console.ReadLine();
-             }
-            return char.ToUpper(userLetter[0]);
+            Console.WriteLine("\n" + board[1] + " | " + board[2] + " | " + board[3]);
+            Console.WriteLine("__________");
+            Console.WriteLine("\n" + board[4] + " | " + board[5] + " | " + board[6]);
+            Console.WriteLine("__________");
+            Console.WriteLine("\n" + board[7] + " | " + board[8] + " | " + board[9]);
+            Console.WriteLine("__________");
         }
     }
 }
